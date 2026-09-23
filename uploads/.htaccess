@@ -1,0 +1,9 @@
+# Hardened security for upload directories
+# Prevent execution of any scripts in the uploads folder
+<FilesMatch "(?i)\.(php|php3|php4|php5|php7|phtml|pl|py|jsp|asp|htm|html|shtml|sh|cgi)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+Options -Indexes -ExecCGI
+php_flag engine off
